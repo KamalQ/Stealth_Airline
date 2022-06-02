@@ -6,7 +6,14 @@ namespace Stealth_Airline
 {
     class Airport
     {
+        private string v;
+
         public Airport() { }
+
+        public Airport(string name)
+        {
+            this.Id = name;
+        }
 
         public string Id { get; private set; }
         public string Name { get; private set; }

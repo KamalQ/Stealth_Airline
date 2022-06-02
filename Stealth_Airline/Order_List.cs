@@ -22,22 +22,29 @@ namespace Stealth_Airline
             foreach (var each in listed_json)
             {
 
-                if ((each.Value["destination"]) == "YUL")
-                {
-                    temp_city_code = Airport.YUL;
-                }
-                else if ((each.Value["destination"]) == "YYZ")
-                {
-                    temp_city_code = Airport.YYZ;
-                }
-                else if ((each.Value["destination"]) == "YYC")
-                {
-                    temp_city_code = Airport.YYC;
-                }
-                else if ((each.Value["destination"]) == "YVR")
-                {
-                    temp_city_code = Airport.YVR;
-                }
+                Airport temp_city_code = new Airport((each.Value["destination"]).Value);
+
+                //if ((each.Value["destination"]) == "YUL")
+                //{
+                //    temp_city_code = Airport.YUL;
+                //}
+                //else if ((each.Value["destination"]) == "YYZ")
+                //{
+                //    temp_city_code = Airport.YYZ;
+                //}
+                //else if ((each.Value["destination"]) == "YYC")
+                //{
+                //    temp_city_code = Airport.YYC;
+                //}
+                //else if ((each.Value["destination"]) == "YVR")
+                //{
+                //    temp_city_code = Airport.YVR;
+                //}
+                //else if (Airport.GetProperty("FName");)
+
+                //if (Airport.Contains(z))
+
+                 //var matches = Airport.Where(p => p.Name == nameToExtract);
 
                 Order.Add(new Order { Code = each.Name, Destination_City_Code = temp_city_code });
             }
